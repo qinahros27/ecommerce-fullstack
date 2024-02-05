@@ -1,10 +1,10 @@
 ### Ignore unnecessary files in backend
 
 # User-specific files
-backend/backend.WebApi/appsettings.json
-backend/backend.WebApi/appsettings.*.json
-backend/backend.WebApi/obj/
-backend/backend.WebApi/bin/
+backend/backend.Infrastructure/appsettings.json
+backend/backend.Infrastructure/appsettings.*.json
+backend/backend.Infrastructure/obj/
+backend/backend.Infrastructure/bin/
 backend/backend.Domain/obj/
 backend/backend.Domain/bin/
 backend/backend.Business/obj/
