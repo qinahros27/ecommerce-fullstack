@@ -222,11 +222,11 @@ Shipment:
 ## Getting Started
 Clone the respository from github: git clone
 
-This is the deploy link for the backend from Azure: [BackEnd Link](https://ecommerce-backend-fs15.azurewebsites.net)
+<!-- This is the deploy link for the backend from Azure: [BackEnd Link](https://ecommerce-backend-fs15.azurewebsites.net) -->
 
-Using this link plus the proper endpoint to retrieve the data.
+<!-- Using this link plus the proper endpoint to retrieve the data. -->
 
-This is the netlify deploy link for the frontend: [FrontEnd Link](https://anhnguyenecommerce.netlify.app/)
+<!-- This is the netlify deploy link for the frontend: [FrontEnd Link](https://anhnguyenecommerce.netlify.app/) -->
 
 The front-end now just have some basic function: 
 1. Show all products , and filter product by category and price
@@ -235,7 +235,7 @@ The front-end now just have some basic function:
 4. Log in and Sign Up
 5. Manage products ( For user role Admin) : Add, edit, delete
 
-Note: If you navigate to the front-end link and see nothing (One tip: you can run one of the backend links first, such as [this](https://ecommerce-backend-fs15.azurewebsites.net/api/v1/products), and if it works, then run the frontend link again), that is because the server has an internal error. I encountered this problem, and after restarting the server, it worked normally. I think the reason for that is maybe because of sending many requests in a short time, so the server crashes. However, I will figure out how to solve this bug and add more functions for the frontend. By now, these are what I have.
+<!-- Note: If you navigate to the front-end link and see nothing (One tip: you can run one of the backend links first, such as [this](https://ecommerce-backend-fs15.azurewebsites.net/api/v1/products), and if it works, then run the frontend link again), that is because the server has an internal error. I encountered this problem, and after restarting the server, it worked normally. I think the reason for that is maybe because of sending many requests in a short time, so the server crashes. However, I will figure out how to solve this bug and add more functions for the frontend. By now, these are what I have. -->
 
 ## Testing
 
