@@ -3,6 +3,8 @@
 # User-specific files
 backend/backend.Infrastructure/appsettings.json
 backend/backend.Infrastructure/appsettings.*.json
+backend/backend.Infrastructure/src/Database/
+backend/backend.Infrastructure/Migrations/
 backend/backend.Infrastructure/obj/
 backend/backend.Infrastructure/bin/
 backend/backend.Domain/obj/
@@ -13,6 +15,7 @@ backend/backend.Controller/obj/
 backend/backend.Controller/bin/
 backend/backend.Testing/obj/
 backend/backend.Testing/bin/
+backend/*.http
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

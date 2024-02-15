@@ -9,7 +9,7 @@ namespace backend.Business.src.Dtos
         public string Type { get; set; } // Mastercard or Visa
         public string CardNumber { get; set; }
         public DateTime ExpiredDate { get; set; }
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 
     public class UserCardCreateDto
@@ -19,7 +19,7 @@ namespace backend.Business.src.Dtos
         public string CardNumber { get; set; }
         public DateTime ExpiredDate { get; set; }
         public int CVV { get; set; }
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 
     public class UserCardUpdateDto

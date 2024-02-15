@@ -36,6 +36,7 @@ namespace backend.Infrastructure.src.Database
         {
             base.OnModelCreating(modelBuilder);
 
+           
             modelBuilder.Entity<Order>()
                         .HasOne(o => o.Payment)      // Order has one Payment
                         .WithOne(p => p.Order)       // Payment has one Order
@@ -49,7 +50,28 @@ namespace backend.Infrastructure.src.Database
             modelBuilder.Entity<User>()
                         .HasOne(u => u.UserCard)   
                         .WithOne(uc => uc.User)
-                        .HasForeignKey<UserCard>(uc => uc.UserId);   
+                        .HasForeignKey<UserCard>(uc => uc.UserId);  
+
+            modelBuilder.Entity<Order>()
+                        .HasMany(o => o.OrderProducts)   
+                        .WithOne(s => s.Order)
+                        .HasForeignKey(s => s.OrderId);
+
+            modelBuilder.Entity<Product>()
+                        .HasMany(o => o.OrderProducts)   
+                        .WithOne(s => s.Product)
+                        .HasForeignKey(s => s.ProductId);
+             
+            modelBuilder.Entity<User>()
+                        .HasMany(o => o.ReviewRates)   
+                        .WithOne(s => s.User)
+                        .HasForeignKey(s => s.UserId); 
+            
+            modelBuilder.Entity<Product>()
+                        .HasMany(o => o.ReviewRates)   
+                        .WithOne(s => s.Product)
+                        .HasForeignKey(s => s.ProductId); 
+            
 
             modelBuilder.HasPostgresEnum<Role>();
 

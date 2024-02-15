@@ -7,14 +7,14 @@ namespace backend.Business.src.Dtos
         public Guid Id { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
         public float TotalPrice { get; set; }
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
     }
 
     public class PaymentCreateDto
     {
         public PaymentMethod PaymentMethod { get; set; }
         public float TotalPrice { get; set; }
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
     }
 
     public class PaymentUpdateDto

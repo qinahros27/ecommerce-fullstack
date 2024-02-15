@@ -17,7 +17,7 @@ namespace backend.Controller.src.Controllers
         }
 
         [HttpPost("create-admin")]
-        [Authorize(Roles = "Admin")]
+       //[Authorize(Roles = "Admin")]
         public async Task<ActionResult<UserReadDto>> CreateAdmin([FromBody] UserCreateDto dto)
         {
             return CreatedAtAction(nameof(CreateAdmin), await _userService.CreateAdmin(dto));

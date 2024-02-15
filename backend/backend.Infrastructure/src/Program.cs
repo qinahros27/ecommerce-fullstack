@@ -30,6 +30,8 @@ builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<ICategoryService,CategoryService>();
 builder.Services.AddScoped<IProductRepo,ProductRepo>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddSingleton<ErrorHandlerMiddleware>();
 
