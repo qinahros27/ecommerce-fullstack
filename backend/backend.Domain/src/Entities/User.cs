@@ -19,7 +19,6 @@ namespace backend.Domain.src.Entities
 
         public List<Order> Orders { get; set; }
         public UserCard UserCard { get; set; }
-
         public List<ReviewRate> ReviewRates { get; set; }
     }
 

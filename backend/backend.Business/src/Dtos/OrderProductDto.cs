@@ -8,7 +8,7 @@ namespace backend.Business.src.Dtos
         public Guid OrderId { get; set; }
         public Guid ProductId { get; set; }
         public int Quantity { get; set; }
-        public string Color { get; set; }
+        public string? Color { get; set; }
     }
 
     public class OrderProductCreateDto
@@ -16,12 +16,12 @@ namespace backend.Business.src.Dtos
         public Guid OrderId { get; set; }
         public Guid ProductId { get; set; }
         public int Quantity { get; set; }
-        public string Color { get; set; }
+        public string? Color { get; set; }
     }
 
     public class OrderProductUpdateDto
     {
         public int Quantity { get; set; }
-        public string Color { get; set; }
+        public string? Color { get; set; }
     }
 }

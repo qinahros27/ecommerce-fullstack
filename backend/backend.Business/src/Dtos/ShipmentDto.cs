@@ -8,7 +8,7 @@ namespace backend.Business.src.Dtos
         public string CompanyShipmentName { get; set; }
         public string ShipmentTrackingNumnber { get; set; }
         public ShipmentState ShipmentState { get; set; }
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
     }
 
     public class ShipmentCreateDto
@@ -16,7 +16,7 @@ namespace backend.Business.src.Dtos
         public string CompanyShipmentName { get; set; }
         public string ShipmentTrackingNumnber { get; set; }
         public ShipmentState ShipmentState { get; set; }
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
     }
 
     public class ShipmentUpdateDto

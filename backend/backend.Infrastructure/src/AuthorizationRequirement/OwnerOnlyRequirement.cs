@@ -14,9 +14,9 @@ namespace backend.Infrastructure.src.AuthorizationRequirement
         
     }
 
-    public class OwnerOnlyRequirementHandler : AuthorizationHandler<OwnerOnlyRequirement, OrderReadDto>
+    public class OwnerOnlyRequirementHandler : AuthorizationHandler<OwnerOnlyRequirement, UserCardReadDto>
     {
-        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, OwnerOnlyRequirement requirement, OrderReadDto resource)
+        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, OwnerOnlyRequirement requirement, UserCardReadDto resource)
         {
             var authenticatedUser = context.User;
             var userId = authenticatedUser.FindFirst(ClaimTypes.NameIdentifier)!.Value;
@@ -28,3 +28,5 @@ namespace backend.Infrastructure.src.AuthorizationRequirement
         }
     }
 }
+
+

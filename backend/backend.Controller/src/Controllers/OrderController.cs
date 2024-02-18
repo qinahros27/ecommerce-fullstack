@@ -29,20 +29,11 @@ namespace backend.Controller.src.Controllers
             return Ok(await _orderService.GetAll(queryOptions));
         }
 
+        [Authorize(Roles = "Admin")]
         public override async Task<ActionResult<OrderReadDto>> UpdateOneById([FromRoute] Guid id, [FromBody] OrderUpdateDto update)
         {
-            var user = HttpContext.User;
-            var order = await _orderService.GetOneById(id);
-            
-            var authorizeOwner = await _authorizationService.AuthorizeAsync(user, order, "OwnerOnly");
-            if(authorizeOwner.Succeeded)
-            {
-                return await base.UpdateOneById(id, update);
-            }
-            else
-            {
-                return new ForbidResult();
-            }
+            var updatedObject = await _orderService.UpdateOneById(id, update);
+            return Ok(updatedObject);
         }
     }
 }

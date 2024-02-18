@@ -11,6 +11,7 @@ using backend.Infrastructure.src.Database;
 using System.Text;
 using backend.Infrastructure.src.Middleware;
 using backend.Infrastructure.src.AuthorizationRequirement;
+using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,8 +33,18 @@ builder.Services.AddScoped<IProductRepo,ProductRepo>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderRepo, OrderRepo>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderProductRepo, OrderProductRepo>();
+builder.Services.AddScoped<IOrderProductService, OrderProductService>();
+builder.Services.AddScoped<IPaymentRepo, PaymentRepo>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<IShipmentRepo, ShipmentRepo>();
+builder.Services.AddScoped<IShipmentService, ShipmentService>();
+builder.Services.AddScoped<IUserCardRepo, UserCardRepo>();
+builder.Services.AddScoped<IUserCardService, UserCardService>();
+builder.Services.AddScoped<IReviewRateRepo, ReviewRateRepo>();
+builder.Services.AddScoped<IReviewRateService, ReviewRateService>();
 
-builder.Services.AddSingleton<ErrorHandlerMiddleware>();
+
 
 // Add services to the container.
 
@@ -76,14 +87,18 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader());
 });
 
-// add policy based requirement handler to service
-builder.Services.AddSingleton<ErrorHandlerMiddleware>();
+builder.Services
+.AddSingleton<ErrorHandlerMiddleware>()
+.AddSingleton<IAuthorizationHandler,OwnerOnlyRequirementHandler>();
 
 // Config route
 builder.Services.Configure<RouteOptions>(options =>
 {
     options.LowercaseUrls = true;
 });
+
+// add policy based requirement handler to serice
+
 
 builder.Services.AddAuthorization(options =>
 {

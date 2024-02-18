@@ -19,6 +19,7 @@ namespace backend.Controller.src.Controllers
         }
 
         [HttpGet("{id:Guid}")]
+        [Authorize]
         public virtual async Task<ActionResult<UserCardReadDto>> GetOneById([FromRoute] Guid id)
         {
             var user = HttpContext.User;
@@ -44,6 +45,7 @@ namespace backend.Controller.src.Controllers
         }
 
         [HttpPatch("{id:Guid}")]
+        [Authorize]
         public virtual async Task<ActionResult<UserCardReadDto>> UpdateOneById([FromRoute] Guid id, [FromBody] UserCardUpdateDto update)
         {
             var user = HttpContext.User;
@@ -62,6 +64,7 @@ namespace backend.Controller.src.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
+        [Authorize]
         public virtual async Task<ActionResult<bool>> DeleteOneById ([FromRoute] Guid id)
         {
             var user = HttpContext.User;

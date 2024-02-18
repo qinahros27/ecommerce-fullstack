@@ -29,7 +29,7 @@ namespace backend.Infrastructure.src.RepoImplementations
             return true;
         }
 
-        public async Task<IEnumerable<T>> GetAll(QueryOptions queryOptions)
+        public virtual async Task<IEnumerable<T>> GetAll(QueryOptions queryOptions)
         {
             var query = _dbSet.AsQueryable();
 
