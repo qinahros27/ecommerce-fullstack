@@ -25,14 +25,14 @@ namespace backend.Business.src.Dtos
         public int? RatePoint { get; set; }
     }
 
-    public class ProductReviewRate
+    public class ProductReviewRateReadDto
     {
         public UserReadDto User { get; set; }
         public string? Review { get; set; }
         public int? RatePoint { get; set; }
     }
 
-    public class UserReviewRate
+    public class UserReviewRateReadDto
     {
         public ProductReadDto Product { get; set; }
         public string? Review { get; set; }

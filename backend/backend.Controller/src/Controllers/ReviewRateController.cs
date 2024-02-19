@@ -33,5 +33,21 @@ namespace backend.Controller.src.Controllers
         {
             return StatusCode(204, await _reviewRateService.DeleteOneById(id));
         }
+        
+        [HttpGet("productId/{productId:Guid}")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<ProductReviewRateReadDto>>> GetAllByProduct([FromRoute] Guid productId)
+        {
+            var userReviews = await _reviewRateService.GetAllByProduct(productId);
+            return Ok(userReviews);
+        }
+
+        [HttpGet("userId/{userId:Guid}")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<UserReviewRateReadDto>>> GetAllByUser([FromRoute] Guid userId)
+        {
+            var productReviews = await _reviewRateService.GetAllByUser(userId);
+            return Ok(productReviews);
+        }
     }
 }
