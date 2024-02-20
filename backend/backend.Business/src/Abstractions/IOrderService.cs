@@ -5,5 +5,6 @@ namespace backend.Business.src.Abstractions
 {
     public interface IOrderService : IBaseService<Order, OrderReadDto, OrderCreateDto, OrderUpdateDto>
     {
+        Task<IEnumerable<UserOrdersReadDto>> GetAllByUserId(Guid userId);
     }
 }
