@@ -10,35 +10,46 @@ namespace backend.Business.src.Implementations
     public class ReviewRateService : BaseService<ReviewRate, ReviewRateReadDto, ReviewRateCreateDto, ReviewRateUpdateDto>, IReviewRateService
     {
         private readonly IReviewRateRepo _reviewRateRepo;
-        public ReviewRateService(IReviewRateRepo reviewRateRepo, IMapper mapper) : base(reviewRateRepo, mapper)
+        private readonly IUserRepo _userRepo;
+        private readonly IProductRepo _productRepo;
+        public ReviewRateService(IReviewRateRepo reviewRateRepo,IUserRepo userRepo, IProductRepo productRepo, IMapper mapper) : base(reviewRateRepo, mapper)
         {
             _reviewRateRepo = reviewRateRepo;
+            _userRepo = userRepo;
+            _productRepo = productRepo;
         }
         
         public async Task<IEnumerable<ProductReviewRateReadDto>> GetAllByProduct(Guid ProductId)
         {
-            var foundItem = await _reviewRateRepo.GetAllByProduct(ProductId);
-            if(foundItem == null) 
+            var userReviewList = await _reviewRateRepo.GetAllByProduct(ProductId);
+            
+            foreach(var userReview in userReviewList)
             {
-                throw CustomException.NotFoundException();
+                userReview.User = await _userRepo.GetOneById(userReview.UserId); 
             }
-            else 
-            {
-                return _mapper.Map<IEnumerable<ProductReviewRateReadDto>>(foundItem);
-            }
+
+            return userReviewList.Select(userReview => new ProductReviewRateReadDto
+            {   
+                User = _mapper.Map<UserReadDto>(userReview.User),
+                Review = userReview.Review,
+                RatePoint = userReview.RatePoint
+            });
         }
  
         public async Task<IEnumerable<UserReviewRateReadDto>> GetAllByUser(Guid UserId)
         {
-            var foundItem = await _reviewRateRepo.GetAllByUser(UserId);
-            if(foundItem == null) 
+            var productReviewList = await _reviewRateRepo.GetAllByUser(UserId);
+            foreach(var productReview in productReviewList)
             {
-                throw CustomException.NotFoundException();
+                productReview.Product = await _productRepo.GetOneById(productReview.ProductId); 
             }
-            else 
-            {
-                return _mapper.Map<IEnumerable<UserReviewRateReadDto>>(foundItem);
-            }
+
+            return productReviewList.Select(productReview => new UserReviewRateReadDto
+            {   
+                Product = _mapper.Map<ProductReadDto>(productReview.Product),
+                Review = productReview.Review,
+                RatePoint = productReview.RatePoint
+            });
         }
     }
 }

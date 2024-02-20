@@ -18,14 +18,12 @@ namespace backend.Infrastructure.src.RepoImplementations
 
         public async Task<IEnumerable<ReviewRate>> GetAllByProduct(Guid productId)
         {
-            var userReviews = await _reviewRates.Where(rr => rr.ProductId == productId).ToListAsync();
-            return userReviews;
+            return await _reviewRates.Where(rr => rr.ProductId == productId).ToListAsync();;
         }
 
         public async Task<IEnumerable<ReviewRate>> GetAllByUser(Guid userId)
         {
-            var productsReviews = await _reviewRates.Where(rr => rr.UserId == userId).ToListAsync();
-            return productsReviews;
+            return await _reviewRates.Where(rr => rr.UserId == userId).ToListAsync();
         }
     }
 }
