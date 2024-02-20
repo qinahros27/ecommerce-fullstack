@@ -12,11 +12,13 @@ namespace backend.Business.src.Implementations
         private readonly IReviewRateRepo _reviewRateRepo;
         private readonly IUserRepo _userRepo;
         private readonly IProductRepo _productRepo;
-        public ReviewRateService(IReviewRateRepo reviewRateRepo,IUserRepo userRepo, IProductRepo productRepo, IMapper mapper) : base(reviewRateRepo, mapper)
+        private readonly ICategoryRepo _categoryRepo;
+        public ReviewRateService(IReviewRateRepo reviewRateRepo,IUserRepo userRepo,ICategoryRepo categoryRepo, IProductRepo productRepo, IMapper mapper) : base(reviewRateRepo, mapper)
         {
             _reviewRateRepo = reviewRateRepo;
             _userRepo = userRepo;
             _productRepo = productRepo;
+            _categoryRepo = categoryRepo;
         }
         
         public async Task<IEnumerable<ProductReviewRateReadDto>> GetAllByProduct(Guid ProductId)
@@ -28,12 +30,7 @@ namespace backend.Business.src.Implementations
                 userReview.User = await _userRepo.GetOneById(userReview.UserId); 
             }
 
-            return userReviewList.Select(userReview => new ProductReviewRateReadDto
-            {   
-                User = _mapper.Map<UserReadDto>(userReview.User),
-                Review = userReview.Review,
-                RatePoint = userReview.RatePoint
-            });
+            return _mapper.Map<IEnumerable<ProductReviewRateReadDto>>(userReviewList);
         }
  
         public async Task<IEnumerable<UserReviewRateReadDto>> GetAllByUser(Guid UserId)
@@ -42,14 +39,10 @@ namespace backend.Business.src.Implementations
             foreach(var productReview in productReviewList)
             {
                 productReview.Product = await _productRepo.GetOneById(productReview.ProductId); 
+                productReview.Product.Category = await _categoryRepo.GetOneById(productReview.Product.CategoryId);
             }
 
-            return productReviewList.Select(productReview => new UserReviewRateReadDto
-            {   
-                Product = _mapper.Map<ProductReadDto>(productReview.Product),
-                Review = productReview.Review,
-                RatePoint = productReview.RatePoint
-            });
+            return _mapper.Map<IEnumerable<UserReviewRateReadDto>>(productReviewList);
         }
     }
 }

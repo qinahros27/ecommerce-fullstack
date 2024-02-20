@@ -31,4 +31,9 @@ namespace backend.Business.src.Dtos
         public string Country { get; set; }
         public string PhoneNumber { get; set; }
     }
+
+    public class UserOrdersReadDto
+    {
+        public IEnumerable<OrderOfOrderProductReadDto> OrderProducts { get; set; }
+    }
 }
