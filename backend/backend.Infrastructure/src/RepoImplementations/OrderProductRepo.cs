@@ -15,6 +15,9 @@ namespace backend.Infrastructure.src.RepoImplementations
             _context = dbContext;
         }
 
-       
+        public async Task<IEnumerable<OrderProduct>> GetAllByOrderId(Guid orderId)
+        {
+            return await _orderProducts.Where(rr => rr.OrderId == orderId).ToListAsync();
+        }
     }
 }
