@@ -30,5 +30,6 @@ namespace backend.Business.src.Dtos
         public ProductReadDto Product { get; set; }
         public int Quantity { get; set; }
         public string? Color { get; set; }
+        public OrderProductShipmentReadDto Shipment { get; set; }
     }
 }

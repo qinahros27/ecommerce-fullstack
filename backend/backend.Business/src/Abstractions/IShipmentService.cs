@@ -5,5 +5,7 @@ namespace backend.Business.src.Abstractions
 {
     public interface IShipmentService : IBaseService<Shipment, ShipmentReadDto, ShipmentCreateDto, ShipmentUpdateDto>
     {
+        
+        Task<OrderProductShipmentReadDto> GetOneByOrderProductId(Guid orderProductId);
     }
 }
