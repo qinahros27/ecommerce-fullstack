@@ -42,6 +42,7 @@ namespace backend.Infrastructure.src.Configuration
             CreateMap<Shipment, ShipmentReadDto>();
             CreateMap<ShipmentCreateDto, Shipment>();
             CreateMap<ShipmentUpdateDto, Shipment>();
+            CreateMap<Shipment, OrderProductShipmentReadDto>();
 
             CreateMap<UserCard, UserCardReadDto>();
             CreateMap<UserCardCreateDto, UserCard>();

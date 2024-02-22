@@ -11,11 +11,13 @@ namespace backend.Business.src.Implementations
         private readonly IOrderProductRepo _orderProductRepo;
         private readonly IProductRepo _productRepo;
         private readonly ICategoryRepo _categoryRepo;
-        public OrderProductService(IOrderProductRepo orderProductRepo,IProductRepo productRepo,ICategoryRepo categoryRepo, IMapper mapper) : base(orderProductRepo, mapper)
+        private readonly IShipmentRepo _shipmentRepo;
+        public OrderProductService(IOrderProductRepo orderProductRepo,IProductRepo productRepo,ICategoryRepo categoryRepo,IShipmentRepo shipmentRepo, IMapper mapper) : base(orderProductRepo, mapper)
         {
             _orderProductRepo = orderProductRepo;
             _productRepo = productRepo;
             _categoryRepo = categoryRepo;
+            _shipmentRepo = shipmentRepo;
         }
 
         public async Task<IEnumerable<OrderOfOrderProductReadDto>> GetAllByOrderId(Guid orderId)
@@ -26,6 +28,7 @@ namespace backend.Business.src.Implementations
             {
                 orderProduct.Product = await _productRepo.GetOneById(orderProduct.ProductId);
                 orderProduct.Product.Category = await _categoryRepo.GetOneById(orderProduct.Product.CategoryId);
+                orderProduct.Shipment = await _shipmentRepo.GetOneByOrderProductId(orderProduct.Id);
             }
 
             return _mapper.Map<IEnumerable<OrderOfOrderProductReadDto>>(orderProductList);

@@ -10,7 +10,6 @@ namespace backend.Domain.src.Entities
         public Guid UserId { get; set; }
 
         public User User { get; set; }
-        public Shipment Shipment { get; set; }
         public Payment Payment { get; set; }
         public List<OrderProduct> OrderProducts { get; set; }
     }

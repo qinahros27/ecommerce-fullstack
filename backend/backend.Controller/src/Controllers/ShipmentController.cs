@@ -33,5 +33,11 @@ namespace backend.Controller.src.Controllers
         {
             return StatusCode(204, await _shipmentService.DeleteOneById(id));
         }
+
+        [HttpGet("orderProduct/{orderProductId:Guid}")]
+        public async Task<ActionResult<OrderProductShipmentReadDto>> GetOneByOrderProductId(Guid orderProductId)
+        {
+            return Ok(await _shipmentService.GetOneByOrderProductId(orderProductId));
+        }
     }
 }

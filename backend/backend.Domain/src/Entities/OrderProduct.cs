@@ -8,6 +8,7 @@ namespace backend.Domain.src.Entities
         public string? Color { get; set; }
         public Order Order { get; set; }
         public Product Product { get; set; }
+        public Shipment Shipment { get; set; }
         
     }
 }
