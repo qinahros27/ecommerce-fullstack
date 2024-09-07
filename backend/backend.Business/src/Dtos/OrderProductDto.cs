@@ -24,4 +24,12 @@ namespace backend.Business.src.Dtos
         public int Quantity { get; set; }
         public string? Color { get; set; }
     }
+
+    public class OrderOfOrderProductReadDto
+    {
+        public ProductReadDto Product { get; set; }
+        public int Quantity { get; set; }
+        public string? Color { get; set; }
+        public OrderProductShipmentReadDto Shipment { get; set; }
+    }
 }

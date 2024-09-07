@@ -27,6 +27,7 @@ namespace backend.Infrastructure.src.Configuration
             CreateMap<OrderProduct, OrderProductReadDto>();
             CreateMap<OrderProductCreateDto, OrderProduct>();
             CreateMap<OrderProductUpdateDto, OrderProduct>();
+            CreateMap<OrderProduct, OrderOfOrderProductReadDto>();
 
             CreateMap<Payment, PaymentReadDto>();
             CreateMap<PaymentCreateDto, Payment>();
@@ -35,10 +36,13 @@ namespace backend.Infrastructure.src.Configuration
             CreateMap<ReviewRate, ReviewRateReadDto>();
             CreateMap<ReviewRateCreateDto, ReviewRate>();
             CreateMap<ReviewRateUpdateDto, ReviewRate>();
+            CreateMap<ReviewRate, UserReviewRateReadDto>();
+            CreateMap<ReviewRate, ProductReviewRateReadDto>();
 
             CreateMap<Shipment, ShipmentReadDto>();
             CreateMap<ShipmentCreateDto, Shipment>();
             CreateMap<ShipmentUpdateDto, Shipment>();
+            CreateMap<Shipment, OrderProductShipmentReadDto>();
 
             CreateMap<UserCard, UserCardReadDto>();
             CreateMap<UserCardCreateDto, UserCard>();

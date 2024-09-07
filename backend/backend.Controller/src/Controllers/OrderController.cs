@@ -35,5 +35,12 @@ namespace backend.Controller.src.Controllers
             var updatedObject = await _orderService.UpdateOneById(id, update);
             return Ok(updatedObject);
         }
+
+        [HttpGet("userId/{userId:Guid}")]
+        public async Task<ActionResult<IEnumerable<UserOrdersReadDto>>> GetAllByUserId(Guid userId)
+        {
+            var userOrders = await _orderService.GetAllByUserId(userId);
+            return Ok(userOrders);
+        }
     }
 }
