@@ -1,0 +1,56 @@
+.Shipment-container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.Shipment-inside {
+    margin: 10px auto;
+    width: 1200px;
+}
+
+.Shipment-items-box {
+    border: 1px solid black;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 1000px;
+}
+
+.Shipment-items-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid black;
+    padding:10px;
+}
+
+.Shipment-items-header-component.detail {
+    margin-left: auto;
+}
+
+.Shipment-items-product {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.Shipment-items-product-price {
+    margin-left: auto;
+}
+
+.Shipment-items-product-detail h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.Shipment-items-product-price p {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.Shipment-items-footer {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}

@@ -1,0 +1,112 @@
+.Payment-container {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.Payment-container-inside {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.Payment-address {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.Payment-address-input {
+    display: inline-flex;
+    margin-top: 10px;
+    margin-right: 500px;
+    width: 330px;
+}
+
+.Payment-address-input p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Payment-address-input input {
+    width: 200px;
+    margin-left: auto;
+}
+
+.Payment-method-box {
+    display: inline-flex;
+    margin-top: 10px;
+    margin-right: 500px;
+    width: 330px;
+}
+
+.Payment-method-box p {
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: underline;
+    color: blue;
+}
+
+.Payment-method-box p:hover {
+    cursor: pointer;
+}
+
+.Card-method-inside {
+    border: 1px solid black;
+    margin-left: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 350px;
+}
+
+.Card-method-input {
+    display: inline-flex;
+    width: 100%;
+}
+
+.Card-method-input input {
+    width: 200px;
+    margin-bottom: 10px;
+    margin-left: auto;
+}
+
+.Card-method-input button {
+    margin-left: auto;
+    width: 120px;
+    height: 30px;
+    padding: 2px;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+.Card-method-input button:hover {
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+}
+
+.Card-method-info {
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+
+.Payment-container-inside-button button{
+    width: 200px;
+    height: 25px;
+    margin-top: 10px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.Payment-container-inside-button button:hover {
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+}

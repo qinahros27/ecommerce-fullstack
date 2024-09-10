@@ -1,0 +1,157 @@
+.ProductDetail {
+    margin: 140px auto;
+    width: 1200px;
+}
+
+.ProductDetail a {
+    color:blue;
+}
+
+.ProductDetail__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.ProductDetail__Carousel {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.ProductDetail__Carousel img {
+     width: 350px;
+     height: 350px;
+     border-radius: 20px;
+}
+
+.ProductDetail__item.detail h2 {
+    font-size: 26px;
+}
+
+.ProductDetail__item_box-detail {
+    border-top: 1px dashed grey;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.ProductDetail__item_box-detail h4{
+    font-size: 24px;
+}
+
+.ProductDetail__item_box-detail h5{
+    font-size: 18px;
+}
+
+.ProductDetail__item_box-detail p {
+    margin-top: 10px;
+}
+
+.ProductDetail__item_order {
+    border: 1px solid grey;
+    padding: 10px;
+    width: 250px;
+    margin-left: 20px;
+    height: 85%;
+    border-radius: 10px;
+}
+
+.ProductDetail__item_order h3 {
+    font-size: 24px;
+}
+
+.ProductDetail__item_order p , .ProductDetail__item_order h4{
+    margin-top: 15px;
+}
+
+.ProductDetail__item_order-quantity {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ProductDetail__item_order-quantity select {
+    height: 20px;
+    margin-left: 10px;
+}
+
+.ProductDetail__item_order-quantity p {
+    margin-top: 0
+}
+
+.ProductDetail__item_order button {
+    border: none;
+    background-color: goldenrod;
+    width: 250px;
+    margin: 5px auto;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.ProductDetail__item_order button:hover {
+    background-color: gold;
+}
+
+.ProductDetail__item_order button:active{
+    border: none;
+}
+
+.ProductDetail__item_buyButton button{
+    background-color: #FF6347;
+}
+
+.ProductDetail__item_buyButton button:hover{
+    background-color: #FF7F50;
+}
+
+.ProductDetail__outer_button {
+    margin-left: 10px;
+}
+
+// review rate
+
+.ProductDetail__review_rate_container {
+    margin: 0px auto 100px auto;
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.ProductDetail__review_rate_box {
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;    
+}
+
+.ProductDetail__review_rate_userInfo {
+    display: inline-flex;
+}
+
+.ProductDetail__review_rate_userInfo img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid Black;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.ProductDetail__review_rate_userInfo p {
+    display: flex;
+    align-items: center;
+}
+
+.ProductDetail__review_rate_create h2{
+    margin-bottom: 10px;
+}
+
+.ProductDetail__review_rate_create button {
+    width: 100px;
+    height: 25px;
+    margin-top: 10px;
+    background-color: goldenrod;
+    border-radius: 10px;
+    border: none;
+}
+
+.ProductDetail__review_rate_create button:hover {
+    background-color: #FF7F50;
+}

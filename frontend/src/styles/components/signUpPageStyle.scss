@@ -1,0 +1,85 @@
+.header__img {
+    text-align: center;
+}
+
+.header__img img{
+    width: 150px;
+}
+
+main {
+    border: 1px solid lightgrey;
+    width: 350px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.SignUp-container {
+    padding: 5px;
+}
+
+.SignUp-container__item label {
+    font-weight: bold;
+}
+
+.SignUp-container__item input {
+    width: 330px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.SignUp-container__item.avatar {
+    display: inline-flex;
+}
+
+.SignUp-container__item.avatar input {
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.SignUp-container button {
+    border: none;
+    width: 340px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #FDDA0D;
+}
+
+.SignUp-container button:hover {
+    background-color: yellow;
+}
+
+.SignUp-container__message {
+    color: red;
+    text-align: center;
+}
+
+.create-button {
+    border-top: 1px solid lightgrey;
+    margin-top: 20px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.create-button button {
+    background-color: #00BFFF;
+}
+
+.create-button button:hover {
+    background-color: #87CEFA;
+}
+
+footer {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+}
+
+footer nav {
+    display: inline-flex;
+    gap: 10px;
+}

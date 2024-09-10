@@ -1,0 +1,127 @@
+.ManageProduct {
+    margin-top: 60px;
+    margin-left: 10px;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.ManageProduct__manage-options {
+    border-right: 1px solid grey;
+    margin-left: 2px;
+}
+
+.ManageProduct__manage-options_items {
+    border-left: 5px solid grey;
+    width: fit-content;
+    margin-top: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.ManageProduct__manage-options_items.active {
+    border-left: 5px solid goldenrod;
+}
+
+.ManageProduct__manage-options h2 {
+    margin-left: 5px;
+    margin-top: 50px;
+}
+
+.ManageProduct__manage-options_items h3 {
+    margin-left: 5px;
+    font-size: 22px;
+}
+
+.ManageProduct__manage-box_inner{
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.ManageProduct__manage-box_input {
+    display: inline-flex;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.ManageProduct__manage-box_input h4{
+    width: 120px;
+    font-size: 20px;
+}
+
+.ManageProduct__manage-box_input input{
+    width: 200px;
+    margin-left: 10px;
+}
+
+.ManageProduct__manage-box_input select {
+    width: 200px;
+    margin-left: 10px;
+}
+
+.ManageProduct__manage-box_image h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.ManageProduct__manage-box_image-upload {
+    display: flex;
+}
+
+.ManageProduct__manage-box_image-upload p{
+    font-weight: bold;
+    font-size: 16px;
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+.ManageProduct__inner_button button {
+    width: 150px;
+    height: 25px;
+    margin-top: 10px;
+    background-color: goldenrod;
+    border: none;
+    border-radius: 10px;
+}
+
+.ManageProduct__inner_button button:hover {
+    background-color: gold;
+}
+
+.ManageProduct__inner_added-detail {
+    margin-top: 20px;
+}
+
+.ManageProduct__inner_image-detail {
+    margin-top: 10px;
+}
+
+.ManageProduct__inner_image-detail img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.ManageProduct__manage-box_input.find-button button{
+    background-color: goldenrod;
+    width: 50px;
+    border:none;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.ManageProduct__manage-box_input.find-button button:hover{ 
+    background-color: gold;
+}
+
+.ManageProduct__inner_button {
+    margin-bottom: 10px;
+}
+
+.ManageProduct__inner_delete h4 {
+    font-size: 24px;
+    color:red;
+}

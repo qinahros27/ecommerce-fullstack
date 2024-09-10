@@ -1,0 +1,78 @@
+.PageFooter {
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    background-size: cover;
+}
+  
+.PageFooter__footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 17% 17% 17% 17%;
+    grid-template-rows: 80% 20%;
+    color: white;
+    font-size: 14px;
+    height: 350px;
+    padding-top: 20px;
+}
+  
+.PageFooter__footer a {
+    color: white;
+    text-decoration: none;
+}
+  
+.PageFooter__footer a:hover{
+    text-decoration:underline;
+}
+  
+.PageFooter__footer a:active{
+    color: #DAA520;
+    text-decoration: none;
+}
+  
+.PageFooter__footer_logo-container {
+    width: 180px;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.PageFooter__footer_logo {
+    display:flex;
+    justify-content: center;
+}
+  
+.PageFooter__footer_brand-download img {
+    width: 100px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 10%;
+    margin-bottom: 5px;
+}
+  
+.PageFooter__nav_title {
+    color: lightgrey;
+    margin-bottom: 25px;
+    margin-top:10px;
+    font-size: 16px;
+}
+  
+.PageFooter__nav-bar {
+    grid-column: span 3;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+  
+.PageFooter__nav-bar nav {
+    margin-right: 20px;
+}
+  
+.PageFooter__footer-year{
+    display:flex;
+    align-items: center;
+}
+  
+.PageFooter__footer-year p {
+    margin-left: 60px;
+    color: lightgray;
+}
