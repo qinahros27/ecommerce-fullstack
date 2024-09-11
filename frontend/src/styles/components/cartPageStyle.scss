@@ -1,0 +1,106 @@
+.CartPage {
+    margin-top: 100px;
+}
+
+.CartPage__inner {
+    width: fit-content;
+    margin-left: 300px;
+}
+
+.CartPage__products h2 {
+    font-size: 26px;
+}
+
+.CartPage__products_header {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.CartPage__products_header button {
+    background-color: goldenrod;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+}
+
+.CartPage__products_detail {
+    border-top: 1px ridge grey;
+    border-bottom: 1px ridge grey;
+    margin-top: 10px;
+    width: 800px;
+    display: grid; 
+    grid-template-columns: 10% 30% 50% 15%;
+    padding: 20px;
+}
+
+
+.CartPage__products_detail img {
+    width: 150px;
+    height: 150px;
+}
+
+.CartPage__products_manage h4{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.CartPage__products_manage p{
+    font-size: 16px;
+    color: blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.CartPage__products_nav {
+    display: inline-flex;  
+    font-size: 18px;
+}
+
+.CartPage__products_nav.select {
+    margin-right: 10px;
+}
+
+.CartPage__products_nav p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: black;
+}
+
+.CartPage__products_nav a{
+    color: blue;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.CartPage__products_price h4{
+    font-size: 24px;
+}
+
+.CartPage__products_total-price p {
+    width: fit-content;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.CartPage__products_total-button {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+.CartPage__products_total-button button {
+    background-color: goldenrod;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: none;
+}
+
+.CartPage__products_total-button button:hover {
+    background-color: gold;
+}

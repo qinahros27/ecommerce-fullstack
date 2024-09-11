@@ -1,0 +1,68 @@
+.AccountSetting {
+    width: 50%;
+    margin: 100px auto;
+}
+
+.AccountSetting__info-avatar {
+    width: 50%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.AccountSetting__info-avatar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.AccountSetting__info_item {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 15px;
+}
+
+.AccountSetting__info_item h4 {
+    font-size: 20px;
+    width: 200px;
+}
+
+.AccountSetting__info_item input {
+    width: 300px;
+}
+
+.AccountSetting__info_item p {
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.AccountSetting__info_item a {
+    color: blue;
+    margin-left: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.AccountSetting__info_button {
+    width: 300px;
+    margin-top: 10px;
+}
+
+.AccountSetting__info_button p{
+    color: red;
+}
+
+.AccountSetting__info_button button {
+    border: none;
+    margin-top: 15px;
+    width: 250px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: goldenrod;
+    font-weight: bold;
+}
+
+.AccountSetting__info_button button:hover {
+    background-color: gold;
+}

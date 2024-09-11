@@ -1,0 +1,40 @@
+.Home__marketing {
+    margin-top: 30px;   
+}
+.Home__marketing_carousel {
+    width: 1100px;
+    margin: 0 auto;  
+}
+
+.Home__marketing_img img{
+    width: 1100px;
+    height: 400px;
+    border-bottom: 1px solid grey;
+}
+
+.Home {
+    margin-top: 50px;
+}
+
+.Home__item-lists {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.Home__item-sort {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 98%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.Home__item-pagination {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.Home__item-sort select{
+    z-index: 5;
+    margin-bottom: 20px;
+}

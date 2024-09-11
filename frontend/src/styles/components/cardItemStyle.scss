@@ -1,0 +1,41 @@
+.CardItem {
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    height: 400px;
+}
+
+.CardItem__inside-box img{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.CardItem__inside-box h4 {
+    font-size: 22px;
+    width: 95%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.CardItem__inside-box a {
+    color: #fbc02d;
+    text-decoration: none;
+}
+
+.CardItem__inside-box a:hover {
+    color: gold;
+    text-decoration: none;
+}
+
+.CardItem__inside-box p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.CardItem__cartIcon {
+    margin-top: 5px;
+}

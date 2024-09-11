@@ -1,0 +1,185 @@
+* {
+    padding : 0;
+    margin: 0;
+}
+
+.HeaderBar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid black;
+    display: inline-flex;
+    align-items: center;
+    z-index: 10;
+    background-color: white;
+}
+
+.HeaderBar img{
+    width: 80px;
+    height: 45px;
+    margin-left: 10px;
+}
+
+.HeaderBar__account {
+    color: Black;
+    display: inline-flex;
+    width: 200px;
+    margin-left:auto;
+    margin-right: 30px;
+    align-items: center;
+}
+
+.HeaderBar__account img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid Black;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.HeaderBar__account_name p{
+    font-size: 18px;
+}
+
+.HeaderBar__account_icon {
+    font-size: 13px;
+    position: absolute;
+    top: 25px;
+    cursor: pointer;
+}
+
+.HeaderBar__account_dropdown {
+    position: absolute; 
+    top: 45px;
+    right: 130px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.HeaderBar__account_dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.HeaderBar__account_dropdown li {
+    margin-bottom: 3px;
+}
+
+.HeaderBar__account_dropdown a {
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.HeaderBar__account_dropdown a:hover {
+    color: #DAA520;
+}
+
+.HeaderBar__account_dropdown-logout {
+    border-top: 1px solid black;
+}
+
+.HeaderBar__cart {
+    display: inline-flex;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.HeaderBar__cart span{
+    color: #DAA520;
+}
+.HeaderBar__account h3{
+    cursor: pointer;
+}
+
+/* Search bar */
+.SearchBar__input {
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    margin-left: 250px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+.SearchBar input {
+    background-color: white;
+    border: 0;
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 10px;
+    height: 20px;
+    width: 600px;
+    border-radius: 10px;  
+}
+
+.SearchBar input:focus {
+    outline: none;
+}
+  
+.searchIcon {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    color: black;
+    display: grid;
+    place-items: center;
+}
+
+#clearBtn {
+    cursor: pointer;
+}
+
+.searchIcon svg {
+    font-size: 25px;
+}
+
+.SearchBar__dataResult {
+    position: absolute;
+    top: 55px;
+    left: 350px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px;
+    width: 600px;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+  
+.SearchBar__dataResult::-webkit-scrollbar {
+    display: none;
+}
+  
+.SearchBar__dataResult .SearchBar__dataItem {
+    width: 600px;
+    height: 40px;
+    margin-top: 3px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.SearchBar__item {
+    display: inline-flex;
+}
+  
+.SearchBar__item a {
+    text-decoration: none;
+}
+  
+.SearchBar__item a:hover {
+    color:#DAA520;
+}
