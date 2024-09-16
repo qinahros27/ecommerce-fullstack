@@ -32,5 +32,50 @@ const initialState: {
     userOrder: [],
     loading: false,
     error: ""
-    
 }
+
+
+export const fetchAllOrdersByUserId = createAsyncThunk(
+    'fetchAllOrdersByUserId',
+    async ({ userId}: { userId: Guid }) => {
+        try {
+            const result = await axios.get<OrderRead[]>(`http://localhost:5102/api/v1/orders/userId/${userId}`);
+            return result.data; 
+          } catch (e) {
+            const error = e as AxiosError;
+            return error;
+          }
+    }
+);
+
+const ordersSlice = createSlice({
+    name: "orders",
+    initialState,
+    reducers: {
+      cleanUpOrderReducer: () => {
+        return initialState
+      }
+    } ,
+    extraReducers: (build) => {
+        build
+        .addCase(fetchAllOrdersByUserId.pending, (state, action) => {
+            state.loading = true
+        })
+        .addCase(fetchAllOrdersByUserId.rejected, (state, action) => {
+            state.error = "Cannot fetch data"
+        })
+        .addCase(fetchAllOrdersByUserId.fulfilled, (state, action) => {
+            if (action.payload instanceof AxiosError) {
+                state.error = action.payload.message
+            } else {
+                state.orders = action.payload;
+                
+            }
+            state.loading = false
+        })
+    }
+})
+
+const ordersReducer = ordersSlice.reducer
+export const { cleanUpOrderReducer } = ordersSlice.actions
+export default ordersReducer
