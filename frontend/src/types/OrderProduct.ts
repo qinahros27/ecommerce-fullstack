@@ -2,7 +2,7 @@ import { Guid } from "guid-typescript"
 import Product from "./Product"
 import OrderProductShipmentRead from "./Shipment" 
 
-export default interface OrderProductCreate
+export interface OrderProductCreate
 {
     orderId: Guid
     productId: Guid
@@ -10,7 +10,7 @@ export default interface OrderProductCreate
     color?: string
 }
 
-export default interface OrderProductRead
+export interface OrderProductRead
 {
     id: Guid
     orderId: Guid
@@ -19,7 +19,7 @@ export default interface OrderProductRead
     color?: string
 }
 
-export default interface OrderOfOrderProductRead
+export interface OrderOfOrderProductRead
 {
     product: Product
     quantity: number

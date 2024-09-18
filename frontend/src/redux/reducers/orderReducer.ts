@@ -48,6 +48,32 @@ export const fetchAllOrdersByUserId = createAsyncThunk(
     }
 );
 
+export const createAnOrder = createAsyncThunk(
+    'createAnOrder',
+    async ({orderData}: { orderData: OrderCreate }) => {
+      try {
+        const result = await axios.post<OrderRead>('http://localhost:5102/api/v1/orders/', orderData);
+        return result.data; 
+      } catch (e) {
+        const error = e as AxiosError;
+        return error;
+      }
+    }
+);
+
+export const updateAnOrder = createAsyncThunk(
+    'updateAnOrder',
+    async ({orderData, orderId}: { orderData: OrderCreate , orderId: Guid}) => {
+      try {
+        const result = await axios.patch<OrderRead>(`http://localhost:5102/api/v1/orders/${orderId}`, orderData);
+        return result.data; 
+      } catch (e) {
+        const error = e as AxiosError;
+        return error;
+      }
+    }
+);
+
 const ordersSlice = createSlice({
     name: "orders",
     initialState,
@@ -72,6 +98,34 @@ const ordersSlice = createSlice({
                 
             }
             state.loading = false
+        })
+        .addCase(createAnOrder.fulfilled, (state, action) => {
+            if (action.payload instanceof AxiosError) {
+                state.error = action.payload.message
+            } else {
+               state.order = action.payload;
+            }
+            state.loading = false
+        })
+        .addCase(createAnOrder.pending, (state, action) => {
+            state.loading = true
+        })
+        .addCase(createAnOrder.rejected, (state, action) => {
+            state.error = "Cannot fetch data"
+        })
+        .addCase(updateAnOrder.fulfilled, (state, action) => {
+          if (action.payload instanceof AxiosError) {
+              state.error = action.payload.message
+          } else {
+              state.order = action.payload;
+          }
+          state.loading = false
+        })
+        .addCase(updateAnOrder.pending, (state, action) => {
+          state.loading = true
+        })
+        .addCase(updateAnOrder.rejected, (state, action) => {
+          state.error = "Cannot fetch data"
         })
     }
 })

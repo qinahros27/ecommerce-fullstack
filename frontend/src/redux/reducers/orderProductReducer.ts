@@ -2,44 +2,38 @@ import { createAsyncThunk,createSlice } from "@reduxjs/toolkit";
 
 import { Guid } from "guid-typescript";
 import axios, { AxiosError } from "axios";
-import {OrderCreate, OrderRead, UserOrdersRead }from "../../types/Order";
+import { OrderProductCreate, OrderOfOrderProductRead, OrderProductRead } from "../../types/OrderProduct";
 
 const initialState: {
-    orderCreate: OrderCreate,
-    order: OrderRead,
-    orders: OrderRead[],
-    userOrder: UserOrdersRead[],
+    orderProductCreate: OrderProductCreate,
+    orderProduct: OrderProductRead,
+    ordersProducts: OrderProductRead[],
+    orderOfProducts: OrderOfOrderProductRead[],
     loading: boolean,
     error: string
 } = {
-    orderCreate: {
-        address: '',
-        postCode: '',
-        city: '',
-        country: '',
-        phoneNumber: '',
-        userId: Guid.createEmpty()
+    orderProductCreate: {
+        orderId: Guid.createEmpty(),
+        productId: Guid.createEmpty(),
+        quantity: 0
     },
-    order: {
+    orderProduct: {
         id: Guid.createEmpty(),
-        postCode: '',
-        city: '',
-        country: '',
-        phoneNumber: '',
-        userId: Guid.createEmpty(),
+        orderId: Guid.createEmpty(),
+        productId: Guid.createEmpty(),
+        quantity: 0
     },
-    orders : [],
-    userOrder: [],
+    ordersProducts : [],
+    orderOfProducts: [],
     loading: false,
     error: ""
 }
 
-
-export const fetchAllOrdersByUserId = createAsyncThunk(
-    'fetchAllOrdersByUserId',
-    async ({ userId}: { userId: Guid }) => {
+export const fetchAllOrdersProductsByOrderId = createAsyncThunk(
+    'fetchAllOrdersProductsByOrderId',
+    async ({ orderId }: { orderId: Guid }) => {
         try {
-            const result = await axios.get<OrderRead[]>(`http://localhost:5102/api/v1/orders/userId/${userId}`);
+            const result = await axios.get<OrderOfOrderProductRead[]>(`http://localhost:5102/api/v1/ordersproducts/orderId/${orderId}`);
             return result.data; 
           } catch (e) {
             const error = e as AxiosError;
@@ -48,34 +42,63 @@ export const fetchAllOrdersByUserId = createAsyncThunk(
     }
 );
 
-const ordersSlice = createSlice({
-    name: "orders",
+export const createAnOrderProduct = createAsyncThunk(
+    'createAnOrderProduct',
+    async ({orderProductData}: { orderProductData:  OrderProductCreate}) => {
+      try {
+        const result = await axios.post<OrderProductRead>('http://localhost:5102/api/v1/ordersproducts/', orderProductData);
+        return result.data; 
+      } catch (e) {
+        const error = e as AxiosError;
+        return error;
+      }
+    }
+);
+
+
+const ordersProductsSlice = createSlice({
+    name: "ordersProducts",
     initialState,
     reducers: {
-      cleanUpOrderReducer: () => {
+      cleanUpOrderProductReducer: () => {
         return initialState
       }
     } ,
     extraReducers: (build) => {
         build
-        .addCase(fetchAllOrdersByUserId.pending, (state, action) => {
+        .addCase(fetchAllOrdersProductsByOrderId.pending, (state, action) => {
             state.loading = true
         })
-        .addCase(fetchAllOrdersByUserId.rejected, (state, action) => {
+        .addCase(fetchAllOrdersProductsByOrderId.rejected, (state, action) => {
             state.error = "Cannot fetch data"
         })
-        .addCase(fetchAllOrdersByUserId.fulfilled, (state, action) => {
+        .addCase(fetchAllOrdersProductsByOrderId.fulfilled, (state, action) => {
             if (action.payload instanceof AxiosError) {
                 state.error = action.payload.message
             } else {
-                state.orders = action.payload;
+                state.orderOfProducts = action.payload;
                 
             }
             state.loading = false
         })
+        .addCase(createAnOrderProduct.fulfilled, (state, action) => {
+            if (action.payload instanceof AxiosError) {
+                state.error = action.payload.message
+            } else {
+               state.orderProduct = action.payload;
+            }
+            state.loading = false
+        })
+        .addCase(createAnOrderProduct.pending, (state, action) => {
+            state.loading = true
+        })
+        .addCase(createAnOrderProduct.rejected, (state, action) => {
+            state.error = "Cannot fetch data"
+        })
     }
 })
 
-const ordersReducer = ordersSlice.reducer
-export const { cleanUpOrderReducer } = ordersSlice.actions
-export default ordersReducer
+const ordersProductsReducer = ordersProductsSlice.reducer
+export const { cleanUpOrderProductReducer } = ordersProductsSlice.actions
+export default ordersProductsReducer
+
