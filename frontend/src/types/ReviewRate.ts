@@ -2,7 +2,7 @@ import { Guid } from "guid-typescript";
 import User from "./User";
 import ProductDetail from "./ProductDetail";
 
-export default interface ReviewRateCreate
+export interface ReviewRateCreate
 {
     userId: Guid
     productId: Guid
@@ -10,16 +10,23 @@ export default interface ReviewRateCreate
     ratePoint?: number
 }
 
-export default interface ProductReviewRateRead
+export interface ProductReviewRateRead
 {
     user: User
     review?: string
     ratePoint?: number
 }
 
-export default interface UserReviewRateRead
+export interface UserReviewRateRead
 {
     product: ProductDetail
+    review?: string
+    ratePoint?: number
+}
+
+export interface ReviewRateRead
+{
+    productId: Guid
     review?: string
     ratePoint?: number
 }
