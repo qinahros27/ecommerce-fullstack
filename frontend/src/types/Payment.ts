@@ -1,6 +1,6 @@
 import { Guid } from "guid-typescript";
 
-export default interface PaymentRead 
+export interface PaymentRead 
 {
     id: Guid
     paymentMethod: "Card" | "PayPal" | "OnlinePayment"
@@ -8,7 +8,7 @@ export default interface PaymentRead
     orderId: Guid
 }
 
-export default interface PaymentCreate
+export interface PaymentCreate
 {
     paymentMethod: "Card" | "PayPal" | "OnlinePayment"
     totalPrice: number
