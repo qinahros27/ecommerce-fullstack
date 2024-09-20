@@ -1,6 +1,6 @@
 import { Guid } from "guid-typescript";
 
-export default interface ShipmentCreate
+export interface ShipmentCreate
 {
     companyShipmentName: string
     shipmentTrackingNumber: string
@@ -8,7 +8,7 @@ export default interface ShipmentCreate
     orderProductId: Guid
 }
 
-export default interface ShipmentRead
+export interface ShipmentRead
 {
     id: Guid
     companyShipmentName: string
@@ -17,7 +17,7 @@ export default interface ShipmentRead
     orderProductId: Guid
 }
 
-export default interface OrderProductShipmentRead
+export interface OrderProductShipmentRead
 {
     companyShipmentName: string
     shipmentTrackingNumber: string
