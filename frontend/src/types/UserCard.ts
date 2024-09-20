@@ -1,6 +1,6 @@
 import { Guid } from "guid-typescript"
 
-export default interface UserCardRead
+export interface UserCardRead
 {
     id: Guid
     cardName: string
@@ -10,7 +10,7 @@ export default interface UserCardRead
     userId: Guid
 }
 
-export default interface UserCardCreate
+export interface UserCardCreate
 {
     cardName: string
     type: string
