@@ -1,5 +1,5 @@
 import { Guid } from "guid-typescript"
-import OrderOfOrderProductRead from "./OrderProduct"
+import { OrderOfOrderProductRead } from "./OrderProduct"
 
 export interface OrderCreate {
     address: string

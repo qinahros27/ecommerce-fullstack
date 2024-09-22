@@ -1,6 +1,6 @@
 import { Guid } from "guid-typescript"
 import Product from "./Product"
-import OrderProductShipmentRead from "./Shipment" 
+import { OrderProductShipmentRead } from "./Shipment" 
 
 export interface OrderProductCreate
 {
