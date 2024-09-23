@@ -3,9 +3,13 @@ import PageFooter from './components/PageFooter';
 import AddIcon from '@mui/icons-material/Add';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useAppSelector from '../hooks/useAppSelector';
+import useAppDispatch from '../hooks/useAppDispatch';
+import { createApayment } from '../redux/reducers/paymentReducer';
+import withAuth from '../authenticate/authenticateCheck';
 
 const PaymentPage = () => {
-
+    const dispatch = useAppDispatch();
     const [open,setOpen] = useState(false);
     const [userCard, setUserCard] = useState(false);
     const navigate = useNavigate();
