@@ -2,9 +2,11 @@ import HeaderBar from "./components/HeaderBar";
 import PageFooter from "./components/PageFooter";
 import avatar from "../images/avatar.png";
 import useAppDispatch from "../hooks/useAppDispatch";
+import useAppSelector from "../hooks/useAppSelector";
 
 const ShipmentPage = () => {
   const dispatch = useAppDispatch();
+  const {shipments} = useAppSelector((state) => state.shipmentsReducer);
   return (
     <div>
       <HeaderBar />

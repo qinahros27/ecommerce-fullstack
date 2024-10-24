@@ -7,6 +7,7 @@ import userReducer from "./reducers/userReducer";
 import categoriesReducer from "./reducers/categoryReducer";
 import cartReducer from "./reducers/cartReducer";
 import { Guid } from "guid-typescript";
+import shipmentsReducer from "./reducers/shipmentReducer";
 
 const persistConfig = {
     timeout: 1000, 
@@ -24,6 +25,7 @@ const store = configureStore({
         userReducer: persistedUserReducer,
         categoriesReducer,
         cartReducer: persistedCartReducer,
+        shipmentsReducer
     },
     preloadedState: {
         productsReducer: {
@@ -56,6 +58,25 @@ const store = configureStore({
         categoriesReducer: {
             categories: [],
             deleteResponse: false,
+            loading: false,
+            error: ""
+        },
+        shipmentsReducer: {
+            shipmentCreate: {
+                companyShipmentName: '',
+                shipmentTrackingNumber: '',
+                shipmentState: 'Delivering',
+                orderProductId: Guid.createEmpty()
+            },
+            shipment: {
+                id: Guid.createEmpty(),
+                companyShipmentName: '',
+                shipmentTrackingNumber: '',
+                shipmentState: 'Delivering',
+                orderProductId: Guid.createEmpty(),
+            },
+            shipments : [],
+            productShipment: [],
             loading: false,
             error: ""
         }
