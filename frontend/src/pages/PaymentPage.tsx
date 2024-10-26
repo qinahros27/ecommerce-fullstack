@@ -11,6 +11,7 @@ import withAuth from "../authenticate/authenticateCheck";
 const PaymentPage = () => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.userReducer);
+  const { order } = useAppSelector((state) => state.ordersReducer);
   const [open, setOpen] = useState(false);
   const [userCard, setUserCard] = useState(false);
   const navigate = useNavigate();
